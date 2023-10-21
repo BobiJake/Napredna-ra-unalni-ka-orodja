@@ -24,7 +24,7 @@ for i = 1:length(st_tock)
         
         % Izris točk znotraj in zunaj kroga ter loka krožnice
         figure;
-        plot(points_in_square(1, inside_circle), points_in_square(2, inside_circle), 'go', 'MarkerSize', 6); % Točke znotraj kroga (modra barva)
+        plot(points_in_square(1, inside_circle), points_in_square(2, inside_circle), 'g.', 'MarkerSize', 6); % Točke znotraj kroga (modra barva)
         hold on;
         plot(points_in_square(1, ~inside_circle), points_in_square(2, ~inside_circle), 'y*', 'MarkerSize', 6); % Točke zunaj kroga (rdeča barva)
         
@@ -38,7 +38,10 @@ for i = 1:length(st_tock)
         plot(x, y_negative, 'k', 'LineWidth', 2); % Del krožnice z y < 0
         
         axis equal;
-        ...................
+        title(['Točke na grafu ter krožnica (', num2str(num_points(i)), ' točk)']);
+        xlabel('x-os');
+        ylabel('y-os');
+        legend('Notranja stran kroga', 'Zunanja stran kroga', 'Krožnica');
         hold off;
     end
 end
